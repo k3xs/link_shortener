@@ -1,0 +1,33 @@
+{% extends 'shortener/main.html' %}
+
+{% block content%}
+<h1>Creating short link...</h1>
+
+<form method="post">
+    {% csrf_token %}
+    <div class="user-form_input">
+        <div class="form-error">{{ form.non_field_errors }}</div>
+
+        {% for f in form %}
+            <label class="home-label" for="{{ f.id_for_label }}">{{ f.label }}:</label>
+            <div>{{ f }}</div>
+            <div class="form-error">{{ f.errors }}</div>
+        {% endfor %}
+        <button class="home-shortener_btn" type="submit">shorten</button>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    {% if new_url %}
+        <div class="user-form_input">
+            <label class="home-label">Shorten url:</label>
+            <input class="home-shortener_url" value="{{ request.scheme }}://{{ request.get_host }}{{ new_url }}">
+            <button class="home-shortener_btn"  type="button"><a href="{{ new_url }}" style="color: white">GO TO {{ new_url }} </a></button>
+        </div>
+    {% endif %}
+
+</form>
+
+{% endblock %}

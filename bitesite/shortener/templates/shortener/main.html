@@ -1,0 +1,60 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{title}}</title>
+	<link type="text/css" href="{% static 'shortener/css/styles.css' %}" rel="stylesheet" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="shortcut icon" href="{% static 'shortener/images/logo3.png' %}" type="image/x-icon"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+{% block mainmenu %}
+		<div class="header">
+			<ul class="mainmenu">
+			<li class="logo"><a href="{% url 'home' %}"><div class="logo"></div></a></li>
+
+                {% for m in menu %}
+                    <li><a href="{% url m.url_name %}">{{ m.title }}</a></li>
+                {% endfor %}
+
+                {% if request.user.is_authenticated %}
+                    <li class="last"> {{ user.username }} | <a  href="{% url 'logout' %}">Logout</a></li>
+                {% else %}
+                    <li class="last"><a href="{% url 'register' %}">Registration</a> | <a href="{% url 'login' %}">Login</a></li>
+                {% endif %}
+            </ul>
+		</div>
+{% endblock mainmenu %}
+
+<!-- Sidebar слева -->
+	<div class="left-chapters">
+        <ul class="">
+            <li class="selected"></li>
+
+            <li><a href="{% url 'my_links' %}">My links</a></li>
+
+            <li class="share">
+            <p>Our channel</p>
+            <a class="share-yt" href="https://www.youtube.com/channel/UCHUNkfiqS3djb4xwQ-M5OgA" target="_blank" rel="nofollow"></a>
+            </li>
+        </ul>
+    </div>
+<!-- Конец Sidebar'а -->
+
+<!-- Блок контента -->
+	<div class="content-text">
+        {% block content %}
+        {% endblock %}
+	</div>
+<!-- Конец блока контента -->
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2021 <a href="{% url 'home' %}">bitesite</a></p>
+</footer>
+<!-- Конец footer'а и страницы -->
+
+</body>
+</html>

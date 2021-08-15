@@ -1,0 +1,240 @@
+html, body {
+	font-family: 'Verdana';
+	background: deepskyblue;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	color: #444;
+}
+
+a {
+    color: white;
+}
+
+.header { background: black; height: 60px; }
+
+.logo {
+	background: url('../images/logo3.png') no-repeat 10px 5px;
+	width: 70px;
+	height: 60px;}
+
+ul.mainmenu {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	height: 60px;
+	color: white;
+	font-size: 20px;
+	overflow: hidden;}
+
+ul.mainmenu li { float: left; margin: 18px 40px 0 30px; }
+ul.mainmenu li.logo { margin: 0;}
+ul.mainmenu li.last { float: right;}
+ul.mainmenu li a { color: white; text-decoration: none; }
+ul.mainmenu li a:hover { color: grey; }
+
+.home-form_input {
+    padding-bottom: 5px;
+    width: 100%;
+    height: auto;
+    border: 1px solid black;
+    border-radius: 8px;
+    background: deepskyblue;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+
+    }
+.home-label {
+    width: 90%;
+    height: 20px;
+    margin-top: 5px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.home-shortener_url {
+    width: 90%;
+    height: 20px;
+    margin-top: 5px;
+    margin-left: 5%;
+    margin-right: 5%;
+    border: 1px solid black;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+
+    }
+
+.home-shortener_btn {
+    width: 90%;
+    height: 30px;
+    margin-top: 5px;
+    margin-left: 5%;
+    margin-right: 5%;
+    background: black;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.home-shortener_btn:hover {
+    background: #404040;
+}
+
+.user-form_input {
+    padding-bottom: 5px;
+    width: 100%;
+    height: auto;
+    border: 1px solid black;
+    border-radius: 8px;
+    background: deepskyblue;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+.form-input {
+    width: 300px;
+    font-size: 16px;
+}
+
+.form-label {
+    display: inline-block;
+    min-width: 200px;
+    vertical-align: top;
+}
+
+.form-error ul {
+    list-style: none;
+    color: #CC0000;
+}
+
+.left-chapters {
+    margin: 0;
+    background: deeppink;
+    border-right: 5px solid black;
+    height: 100%;
+	width: 225px;
+	float: left;}
+
+.left-chapters ul {
+	width: 200px;
+	min-height: 100%;
+	margin: 0;
+	padding: 20px 10px 10px 20px;
+	list-style: none;
+	font-size: 20px;
+}
+.left-chapters ul li {
+	margin: 15px 0 0 0;
+	color: #999;
+}
+
+.left-chapters ul li.selected {color: black; }
+.left-chapters ul li a {
+	color: black;
+	text-decoration: none;
+}
+.left-chapters ul li a:hover { color: grey; }
+.left-chapters ul li.share {margin: 60px 0 0 0;}
+.left-chapters ul li.share p {margin: 30px 0 30px 0; color: black;}
+.left-chapters ul li.share a {
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	margin: 0 20px 0 0;
+}
+.left-chapters ul li.share a.share-yt {
+	width: 100%;
+	height: 30px;
+	background: url('../images/share_yt.png') no-repeat 0 0
+}
+.left-chapters ul li.share a.share-yt:hover {
+	width: 100%;
+	height: 30px;
+	background: url('../images/share_yt.png') no-repeat 0 -30px
+}
+
+.content-text {
+    background: inherit;
+    margin-left: 235px;
+    margin-right: 5px;
+    margin-top: 100px;
+	color: black;
+	font-size: 15px;
+	font-family: 'Verdana';
+}
+.content-text h1 {
+    font-size: 30px;}
+
+.pagination {
+    margin-left: 40%;
+}
+
+.pag-btn {
+    width: 100px;
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 25px;
+    background-color: black;
+    color: white;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+.pag-btn:hover {
+    background-color: grey;
+    color: white;
+}
+
+.link-edit_del {
+    width: 100px;
+    height: 25px;
+    border: 1px solid black;
+    border-radius: 25px;
+    background-color: black;
+    color: white;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+.link-edit_del:hover {
+    background-color: grey;
+    color: white;
+}
+
+.btn {
+    width: 90%;
+    height: 30px;
+    margin-top: 5px;
+    margin-left: 5%;
+    margin-right: 5%;
+    background: black;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.btn:hover {
+    background: #404040;
+}
+
+.confirm-del {
+    font-weight: 600;
+}
+
+.confirm-span_del {
+    color: white;
+}
+
+
+footer {
+    bottom: 0;
+    width: 100%;
+	box-sizing: border-box;
+	background: black;
+	padding: 5px;
+	color: white;
+	font-size: 15px;
+	font-family: Verdana, Geneva, Arial, Helvetica;
+	text-align: center;
+	overflow: hidden;
+}
+

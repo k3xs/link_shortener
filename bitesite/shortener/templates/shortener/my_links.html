@@ -1,0 +1,36 @@
+{% extends 'shortener/main.html' %}
+
+{% block content%}
+<h1>{{ title }}</h1>
+    <ul class="">
+        {% for link in links %}
+        <li>
+            <div class="">
+                <p class="">Time created: {{ link.time_create }}</p>
+                <p class="">Original url: <a href="{{ link.original_url }}"> {{ link.original_url }} </a></p>
+                <p class="">Shorten url: <a href="{{ link.original_url }}"> http://127.0.0.1:8000/{{ link.shorten_url }}/ </a></p>
+                <p>
+                    <button class="link-edit_del"><a href="{% url 'edit_short_link' link.id %}">edit link</a></button>
+                    <button class="link-edit_del"><a href="{% url 'delete_short_link' link.id %}">delete link</a></button>
+                </p>
+                <br>
+            </div>
+        </li>
+        <hr>
+        {% endfor %}
+    </ul>
+
+    {% if is_paginated %}
+    <div class="pagination">
+        {% if page_obj.has_previous %}
+        <button class="pag-btn" type="button"><a href="?page=1&{{ filter }}">First</a></button>
+        <button class="pag-btn" type="button"><a href="?page={{ page_obj.previous_page_number }}&{{ filter }}">Previous</a></button>
+        {% endif %}
+
+        {% if page_obj.has_next %}
+            <button class="pag-btn" type="button"><a href="?page={{ page_obj.next_page_number }}&{{ filter }}">Next</a></button>
+            <button class="pag-btn" type="button"><a href="?page={{ page_obj.paginator.num_pages }}&{{ filter }}">Last</a></button>
+        {% endif %}
+    </div>
+    {% endif %}
+{% endblock %}

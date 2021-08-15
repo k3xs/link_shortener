@@ -1,0 +1,12 @@
+{% extends 'shortener/main.html' %}
+
+
+{% block content%}
+<form action="" method="post">
+    {% csrf_token %}
+    <h2 class="confirm-del">Are you sure you want to delete the link:</h2>
+    <p class="confirm-del"> <span class="confirm-span_del">{{ link }} ???</span></p>
+    <button class="btn" type="submit">yes</button>
+</form>
+
+{% endblock %}
